@@ -38,6 +38,6 @@
 
 - Nhập mảng mà các phần tử có giá trị giảm dần: [10, 9, 8, 7], kết quả mong muốn false
 
-- Nhập mảng mà các phần tử có giá trị tăng dần, nhưng có phần tử giống nhau: [1, 2, 2, 4], kết quả mong muốn false
+- Nhập mảng mà các phần tử có giá trị tăng dần, nhưng có phần tử giống nhau: [1, 2, 2, 4], kết quả mong muốn true
 
 - Nhập mảng mà các phần tử có giá trị tăng dần: [1, 2, 3, 4], kết quả mong muốn true
