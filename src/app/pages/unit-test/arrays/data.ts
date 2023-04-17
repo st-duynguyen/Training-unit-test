@@ -1,5 +1,11 @@
-const isAscending = (arr) => {
-  return arr.every(function (x, i) {
-      return i === 0 || x >= arr[i - 1];
-  });
+export const isAscending = (arr: number[]) => {
+  if (!Array.isArray(arr) || arr.length < 2 || arr.some(isNaN)) {
+    return false;
+  }
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i+1] < arr[i]) {
+      return false;
+    }
+  }
+  return true;
 };
