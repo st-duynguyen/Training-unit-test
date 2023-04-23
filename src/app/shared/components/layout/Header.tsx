@@ -12,7 +12,7 @@ export const Header = (): JSX.Element => {
 
   return (
     <header>
-      <nav className="menu-nav">
+      {/* <nav className="menu-nav">
         <ul className="menu menu-nav">
           <li className="menu-item">
             <Link to="">Home</Link>
@@ -38,7 +38,7 @@ export const Header = (): JSX.Element => {
             </li>
           );
         })}
-      </ul>
+      </ul> */}
     </header>
   );
 }

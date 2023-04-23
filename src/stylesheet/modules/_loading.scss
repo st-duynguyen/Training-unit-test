@@ -1,0 +1,52 @@
+.page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.loading-indicator {
+  @include pxRem(font-size, 60);
+  text-align: center;
+}
+
+.loading_svg__loading-icon {
+  animation: 2s linear infinite svg-animation;
+  max-width: 100px;
+  width: 100%;
+
+  circle {
+    animation: 1.4s ease-in-out infinite both circle-animation;
+    display: block;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 280;
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes svg-animation {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+@keyframes circle-animation {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+  
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+  
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
