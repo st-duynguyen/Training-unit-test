@@ -58,7 +58,7 @@ const deleteUser = (state, payload) => ({
 	error: payload.error,
 });
 
-const strategies = {
+const userListStrategies = {
 	[ACTION_TYPES.GET_LIST_USER]: getListUser,
 	[ACTION_TYPES.GET_LIST_USER_SUCCESS]: getListUserSuccess,
 	[ACTION_TYPES.GET_LIST_USER_ERROR]: getListUserError,
@@ -69,6 +69,16 @@ const strategies = {
   __default__: state => state
 };
 
-const homeReducer = createReducer(strategies, initialState);
-  
-export default homeReducer;
+const userDetailStrategies = {
+	[ACTION_TYPES.GET_LIST_USER]: getListUser,
+	[ACTION_TYPES.GET_LIST_USER_SUCCESS]: getListUserSuccess,
+	[ACTION_TYPES.GET_LIST_USER_ERROR]: getListUserError,
+	[ACTION_TYPES.GET_USER_INFO]: getUserInfo,
+	[ACTION_TYPES.GET_USER_INFO_SUCCESS]: getUserInfoSuccess,
+	[ACTION_TYPES.GET_USER_INFO_ERROR]: getUserInfoError,
+	[ACTION_TYPES.DELETE_USER]: deleteUser,
+  __default__: state => state
+};
+
+export const userListReducer = createReducer(userListStrategies, initialState);
+export const userDetailReducer = createReducer(userDetailStrategies, initialState);

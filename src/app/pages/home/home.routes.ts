@@ -2,12 +2,17 @@ import React from 'react';
 
 import { PageRoute } from '@core/modules/custom-router-dom/router.interface';
 
-const Home = React.lazy(() => import('./containers/Home'));
+const UserList = React.lazy(() => import('./containers/UserList'));
+const UserDetail = React.lazy(() => import('./containers/UserDetail'));
 
 const homeRoutes: PageRoute[] = [
   {
     path: '/',
-    element: Home
+    element: UserList
+  },
+  {
+    path: '/user-info/:id',
+    element: UserDetail
   }
 ];
 

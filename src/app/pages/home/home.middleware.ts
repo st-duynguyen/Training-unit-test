@@ -2,6 +2,7 @@ import { ApiService } from '@app/core/services/api.service';
 import ACTION_TYPES from '@app/core/constants/types';
 import { getListUserError, getListUserSuccess, getUserInfoError, getUserInfoSuccess } from './home.actions';
 import { put, takeLatest } from 'redux-saga/effects';
+import { AnyAction } from 'redux';
 
 const http = new ApiService();
 // eslint-disable-next-line func-style
@@ -15,7 +16,7 @@ function* workGetListUser() {
 }
 
 // eslint-disable-next-line func-style
-function* getUserInfo({ payload }) {
+function* getUserInfo({ payload }: AnyAction) {
   try {
     const res = yield http.get([`https://jsonplaceholder.typicode.com/users/${payload.id}`]);
     yield put(getUserInfoSuccess(res));
