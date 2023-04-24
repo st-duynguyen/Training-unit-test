@@ -78,7 +78,7 @@ describe('Users List Page', () => {
       expect(anchorElement).toHaveAttribute('href', '/user-info/1');
     });
 
-    test('Dont have a user!', async () => {
+    test('Dont Have User!', async () => {
       server.use(
         rest.get('https://jsonplaceholder.typicode.com/users', (req, res, ctx) => {
           return res(ctx.json([]));

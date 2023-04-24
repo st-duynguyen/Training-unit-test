@@ -51,7 +51,7 @@ describe('Users Detail Page', () => {
       expect(screen.getByText(`${dummyListUser['name']}`)).toBeInTheDocument();
     });
 
-    test('Dont have a user!', async () => {
+    test('Dont Have User!', async () => {
       server.use(
         rest.get('https://jsonplaceholder.typicode.com/users/:id', (req, res, ctx) => {
           return res(ctx.json(null));
@@ -65,7 +65,7 @@ describe('Users Detail Page', () => {
       expect(screen.getByText('Dont have a user')).toBeInTheDocument();
     });
 
-    test('Fetching Users Fail!', async () => {
+    test('Fetching User Detail Fail!', async () => {
       server.use(
         rest.get('https://jsonplaceholder.typicode.com/users/:id', (req, res, ctx) => {
           return res(ctx.status(500));
